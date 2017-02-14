@@ -23,12 +23,14 @@ public class mymain
 		/*String speechRecogResult*/;																					//@<BlockInfo>jp.vstone.block.variable,176,16,176,16,False,2,break@</BlockInfo>
 																														//@<EndOfBlock/>
 		/*RecogResult recogresult*/;																					//@<BlockInfo>jp.vstone.block.variable,240,16,240,16,False,1,break@</BlockInfo>
+
 																														//@<EndOfBlock/>
 																														//@</OutputChild>
 	}																													//@<EndOfBlock/>
 
 	//@<Separate/>
 	public void motionSpeeching(String motionCd)																		//@<BlockInfo>jp.vstone.block.func,640,592,1280,592,False,16,@</BlockInfo>
+  
 	throws SpeechRecogAbortException {
 		if(!GlobalVariable.TRUE) throw new SpeechRecogAbortException("default");
 
@@ -275,6 +277,7 @@ public class mymain
 																														//@<OutputChild>
 				CRobotUtil.Log(getClass().getSimpleName(), (String)"◆まち");												//@<BlockInfo>jp.vstone.block.printlog,416,176,416,176,False,40,@</BlockInfo>	@<EndOfBlock/>
 				try{																									//@<BlockInfo>jp.vstone.block.tcpip.server,496,128,1072,128,False,39,@</BlockInfo>
+
 					GlobalVariable.recvString = tcpipServer.waitRequest();
 
 					if(GlobalVariable.recvString==null) GlobalVariable.recvString="";
@@ -369,7 +372,8 @@ public class mymain
 			pose.SetLed(	new Byte[]{0,1,2,8,9,10,11,12,13},
 							new Short[]{0,-255,0,180,80,0,180,80,0}
 							);
-			GlobalVariable.motion.play(pose,500);
+
+      GlobalVariable.motion.play(pose,500);
 			CRobotUtil.wait(500);																						//@<EndOfBlock/>
 			CRobotUtil.Log(getClass().getSimpleName(), (String)"◆ループ抜けました");											//@<BlockInfo>jp.vstone.block.printlog,1296,176,1296,176,False,41,@</BlockInfo>	@<EndOfBlock/>
 																														//@</OutputChild>
@@ -413,7 +417,8 @@ public class mymain
 																														//@<OutputChild>
 				CRobotUtil.Log(getClass().getSimpleName(), (String)motionCd);												//@<BlockInfo>jp.vstone.block.printlog,240,544,240,544,False,52,@</BlockInfo>	@<EndOfBlock/>
 				pose = new CRobotPose();																					//@<BlockInfo>jp.vstone.block.pose,304,544,304,544,False,51,コメント@</BlockInfo>
-				pose.SetPose(	new Byte[]{1,2,3,4,5,6,7,8},
+
+        pose.SetPose(	new Byte[]{1,2,3,4,5,6,7,8},
 								new Short[]{-1044,-593,-881,280,-14,-337,-188,-3}
 								);
 				pose.SetTorque(	new Byte[]{1,2,3,4,5,6,7,8},
